@@ -48,7 +48,7 @@ $(function () {
       },
       success: (res) => {
         if (res.status !== 0) return layer.msg(res.message);
-        console.log(res.message);
+        // console.log(res.message);
         layer.msg('注册成功');
         //模拟点击事件,跳转到登录
         $('#link_login').click();
