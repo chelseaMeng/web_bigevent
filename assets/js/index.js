@@ -37,12 +37,12 @@ const renderAvatar = (user) => {
   $('#welcome').html(`欢迎 ${name}`);
   //渲染头像
   if (user.user_pic !== null) {
-    $('.layui-nav-img').attr('src', 'user.user_pic').show();
+    $('.layui-nav-img').attr('src', user.user_pic).show();
     $('.text-avatar').hide();
   } else {
-    $('.layui-nav-img').attr('src', 'user.user_pic').hide();
+    $('.layui-nav-img').hide();
     let first = name[0].toUpperCase();
-    $('.text-avatar').html().show(first);
+    $('.text-avatar').html(first).show();
   }
 };
 
@@ -55,6 +55,11 @@ $('#btnLogout').click(() => {
     location.href = '/login.html';
   });
 });
+
+//切换高亮
+function change() {
+  $('#change').addClass('layui-this').next().removeClass('layui-this');
+}
 
 //获取用户列表
 getUserInfo();

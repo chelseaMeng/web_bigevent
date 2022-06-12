@@ -5,7 +5,7 @@
 $.ajaxPrefilter((options) => {
   // console.log(options);
   //在发起真正的ajax请求之前,统一拼接请求的根路径
-  options.url = `http://www.liulongbin.top:3007` + options.url;
+  options.url = `http://big-event-api-t.itheima.net` + options.url;
   //请求拦截器中注入token
   if (options.url.includes('/my/')) {
     options.headers = {
@@ -14,7 +14,7 @@ $.ajaxPrefilter((options) => {
   }
   //权限校验
   options.complete = (res) => {
-    console.log(res);
+    // console.log(res);
     //res.responseJSON.status===1说明获取用户信息失败
     if (
       res.responseJSON.status === 1 &&
